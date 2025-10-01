@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ personal.name }} - Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>{{ personal.name }}</h1>
+    <p><b>Email:</b> {{ personal.email }} | <b>Phone:</b> {{ personal.phone }}</p>
+    <p><b>Location:</b> {{ personal.location }}</p>
+    <p><b>Bio:</b> {{ personal.bio }}</p>
+
+    <h2>Skills</h2>
+    <ul>
+      {% for skill in skills %}
+      <li>{{ skill }}</li>
+      {% endfor %}
+    </ul>
+
+    <h2>Experience</h2>
+    {% for exp in experiences %}
+      <div>
+         <strong>{{ exp.role }}, {{ exp.company }}</strong> ({{ exp.date }})
+         <p>{{ exp.desc }}</p>
+      </div>
+    {% endfor %}
+
+    <h2>Education</h2>
+    <ul>
+      {% for edu in education %}
+        <li><b>{{ edu.degree }}</b> | {{ edu.school }} ({{ edu.date }})</li>
+      {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('contact') }}">Contact Me</a>
+</body>
+</html>

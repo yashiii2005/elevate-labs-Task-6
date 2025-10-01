@@ -1,0 +1,6 @@
+body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 2em; }
+h1 { color: #195da4; }
+h2 { color: #222; }
+ul { list-style: square inside; }
+input, textarea { margin-top: 1em; width: 50%; }
+button { margin-top: 1em; }
